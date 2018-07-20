@@ -1,2 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="landepatil.vishal.mylibrary" />
+
+    package="landepatil.vishal.sqlitebuilder">
+
+
+
+
+
+</manifest>
