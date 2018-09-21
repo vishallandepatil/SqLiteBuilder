@@ -16,7 +16,7 @@ Maven
 <dependency>
   <groupId>landepatil.vishal</groupId> 
   <artifactId>sqlitebuilder</artifactId>
-  <version>1.0.0-beta</version>
+  <version>1.0.2-beta</version>
   <type>pom</type> 
 </dependency>
 
@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'landepatil.vishal:sqlitebuilder:1.0.0-beta'
+    implementation 'landepatil.vishal:sqlitebuilder:1.0.2-beta'
 }
 
 
