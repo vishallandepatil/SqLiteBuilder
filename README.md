@@ -112,45 +112,74 @@ Query  query=Query. createQuery(db);
 ```
 By creating this object we are ready to load data Query object we need to only for Load data or select data
 
-**1. Selecting or Retrieving Data:**
+### 1. Selecting or Retrieving Data:
 
 To select data from particular table we need object of Query class by using createQuery() method. There are three ways to load data from database. 
 	
-A] Single record(row) [ loadObject()]    B] Multiple records (rows) [load()]  C]  LoadCursor 
+#### A] Single record(row) [ loadObject()] 
+#### B] Multiple records (rows) [load()] 
+#### C] LoadCursor
+
 This all three types of retrieving records helps developer to easily retrieve data from database as per format in which developer  need data.( ArrayList, Object, Cursor)
 
-A] Single record(row) :
-We use loadObject() method to load single from database, loadObject() method returns  Object of first record which are selected from database if data not available then it returns null . The syntax of load method is given below 
-Syntax of method:
+#### A] Single record(row) :
+We use __*loadObject()*__ method to load single row/record from database, __*loadObject()*__ method returns  Object of first record which are selected from database if data not available then it returns null.
+The syntax of load method is given below 
 
+Syntax of method:
+```
 public Object loadObject(Class table)
-e.g. 
+```
+Example
+```
 Object record=query. loadObject (ExapmleTable.class);
+```
 Corresponding SQLite statement:
- 
+ ```
 Select * from ExapmleTable
+```
 
-B].Multiple records (rows):
-We use load() method to load multiple data from database, load method returns List<Object> which are selected from database if data not available then it returns empty list. The syntax of load method is given below 
+#### B].Multiple records (rows):
+We use __*load()*__ method to load multiple data from database, load method returns __*List< Object>*__ which are selected from database if data not available then it returns empty list. 
+The syntax of load method is given below 
+
 Syntax of method:
+```
 public List<Object> load(Class table);
-e.g. 
+```
+Example
+``` 
 List<Object> list=query.load(ExapmleTable.class);
+```
+
 Corresponding SQLite statement 
+```
 Select * from ExapmleTable
-C] LoadCursor
-We use loadCursor() method to load multiple data from database, loadCursor() method returns Cursor which are selected from database if data not available then it returns empty Cursor. The syntax of loadCursor() method is given below. 
+```
+#### C] LoadCursor
+We use __*loadCursor()*__ method to load multiple data from database, __*loadCursor()*__ method returns Cursor which are selected from database if data not available then it returns empty Cursor.
+
+The syntax of loadCursor() method is given below. 
+
 Syntax of method:
+```
 public Cursor loadCursor(Class table);
-e.g. 
+```
+Example 
+```
 Cursor cursor =query. loadCursor (ExapmleTable.class);
+````
 Corresponding SQLite statement 
+```
 Select * from ExapmleTable
+```
 
 
-2.	Inserting  Data:
-We can insert records in table by using one of the static insert() and insertList() method of Query class. There are two ways to insert data in database. 
- A] Insert single Record                                                                    B] Insert multiple Records 
+### 2. Inserting  Data:
+
+We can insert records in table by using one of the static *__insert()*__ and *__insertList()*__ method of Query class. There are two ways to insert data in database. 
+#### A] Insert single Record                                                                    
+#### B] Insert multiple Records 
 
 A] Insert single Record:
 	To insert Single record in database we need to object of Object class with data to be inserted  in Table 
