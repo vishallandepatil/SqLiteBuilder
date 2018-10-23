@@ -176,63 +176,107 @@ Select * from ExapmleTable
 
 
 ### 2. Inserting  Data:
-
-We can insert records in table by using one of the static *__insert()*__ and *__insertList()*__ method of Query class. There are two ways to insert data in database. 
+ We can insert records in table by using one of the static __*insert()__* and __*insertList()*__ method of Query class. There are two ways to insert data in database. 
 #### A] Insert single Record                                                                    
 #### B] Insert multiple Records 
 
-A] Insert single Record:
-	To insert Single record in database we need to object of Object class with data to be inserted  in Table 
-e.g.           Student student=new Student(01, “vishal”);	
-now our data is ready to insert now we need to use static insert() Method  of  Query class, following is the simple syntax of insert() method.
+#### A] Insert single Record:
+ To insert Single record in database we need to object of Object class with data to be inserted  in Table.
+ Example
+ ```
+ Student student=new Student(01, “vishal”);	
+ ```
+now our data is ready to insert now we need to use static __*insert()*__ Method  of  Query class,
+following is the simple syntax of insert() method.
+
 Syntax of method:
+```
 public static boolean insert(Object row)
-e.g.
+```
+Example
+```
 Query.insert(student);
-B] Insert multiple Records:
-To insert Single record in database we need to ArrayList of  Object class with data to be inserted  in Table 
-e.g.            
+```
+
+#### B] Insert multiple Records:
+ To insert Single record in database we need to ArrayList of  Object class with data to be inserted  in Table 
+Example
+```
 ArrayList<Student> lsitstud=new ArrayList<Student>();
-lsitstud.add(new Student(01, “vishal”));
- 
+lsitstud.add(new Student(01, “vishal”)); 
 lsitstud.add(new Student(02, “Amar”));
-now our data is ready to insert now we need to use static insertList () Method  of  Query class, following is the simple syntax of insertList () method.
+```
+ now our data is ready to insert now we need to use static __*insertList()*__ Method  of  Query class,
+ following is the simple syntax of insertList () method.
+ 
 Syntax of method:
+```
 public static boolean insertList(ArrayList rows) 
-e.g.
+```
+Example
+```
 Query. insertList(lsitstud);
+```
 
-3.	Updating  Data:
-We can update records in table by using static update() of Query class. Update method is a static method of Query class the syntax of update method is given bellow.
+### 3. Updating  Data:
+We can update records in table by using static __*update()*__ of Query class. Update method is a static method of Query class the syntax of update method is given bellow.
+
 Syntax of method:
+```
 public long update(Object row, String where);
-e.g.
+```
+Example
+
+```
 Query.update(new Student(01,”Rushikesh”),”Rollno=01”);
-By executing this query it will affect rows which matches the where condition it will update all object in database with respective to columns, this methods returns the  number of rows affected by updated query or no of rows updated query. 
+```
+ By executing this query it will affect rows which matches the where condition it will update all object in database with respective to columns, this methods returns the  number of rows affected by updated query or no of rows updated query. 
 
-4.	Clauses:
+### 4. Clauses:
 
-A] Restriction: 
-This SQLiteBuilder tutorial explains how to use a SQLiteBuilder WHERE condition with syntax and examples. The SQLiteBuilder WHERE Condition is used to select particular row/rows in a SELECT, UPDATE, or DELETE statement.
-Restriction class is used to set restriction with WHERE clause with Query object with the help of setRestriction() method. The Syntax of Restriction method is as follow,
+#### A] Restriction: 
+ This SQLiteBuilder tutorial explains how to use a **SQLiteBuilder WHERE condition with syntax and examples**. The SQLiteBuilder WHERE Condition is used to select particular row/rows in a SELECT, UPDATE, or DELETE statement.
+**Restriction** class is used to set restriction with WHERE clause with Query object with the help of __*setRestriction()*__ method. 
+The Syntax of Restriction method is as follow,
+```
  public Query setRestriction(Restriction restriction);
-set restriction method return the object of Query Class and accept the parameter of restriction class. The following are some constructor and methods of Restriction class.
-Constructor:   
-Restriction class having only default constructor 
+ ```
+  set restriction method return the object of Query Class and accept the parameter of restriction class.
+ The following are some constructor and methods of Restriction class.
+ 
+**Constructor:**
+ Restriction class having only default constructor
 Example:
+```
 Restriction restriction=new Restriction (); 
-
-
-Methods of Restriction class:
-Restriction class having following methods which are help full to develop strong SQLite “WHERE” query, following are methods.
-a.	public Restriction addEquals(String property, String value) :
-Method is used to add “WHERE” condition with “=” given property and String value. If already any Restriction added before then it automatically add ‘AND’ Operator inside query. 
-Example:
+```
+**Methods of Restriction class:**
+ Restriction class having following methods which are help full to develop strong SQLite “WHERE” query, following are methods.
+##### a. public Restriction addEquals(String property, String value) :
+ Method is used to add “WHERE” condition with “=” given property and String value. If already any Restriction added before then it automatically add ‘AND’ Operator inside query.
+ 
+ Syntax:
+```
 restriction.addEquals (“Column”,”value”);
+```
+
+Example:
+```
 restriction.addEquals (“Rollno”,”1”);
-i.e   “WHERE  Rollno=’1’
+```
+i.e.
+```
+   “WHERE  Rollno=’1’
+```
+
+Example: 
+```
 restriction.addEquals (“Dept”,”IT”);
-i.e   “WHERE  Rollno=’1’ AND Dept=’IT’
+```
+i.e
+```
+“WHERE  Rollno=’1’ AND Dept=’IT’
+```
 
 b.	public Restriction  addEquals(String property, boolean value) :
 Method is used to add “WHERE” condition with “=” given property and Boolean value (true=1 and false=0). If already any Restriction added before then it automatically add ‘AND’ Operator inside query.
