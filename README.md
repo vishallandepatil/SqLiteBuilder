@@ -1,35 +1,41 @@
-Introduction:
-===================
+Introduction: SQLiteBuilder ORM (Object Relational Mapping) tool
+===============================================================
 SQLiteBuilder library simplifies the development of Android application to interact with the database. SQLiteBuilder is an open source, lightweight, ORM (Object Relational Mapping) tool.
 An ORM tool simplifies the data creation, data manipulation and data access. It is a programming technique that maps the object to the data stored in the database.
-Advantages:
-•	SQLiteBuilder takes care of mapping Java classes to SQLite database.
-•	Provides simple APIs for storing and retrieving Java objects directly to and from SQLite database
-•	If there is change in the database or in any table, then you need to change the java Class properties only
-•	Minimizes database access with smart fetching strategies.
-•	Provides simple querying of data.
-•	Automatic table creation: SQLiteBuilder Library provides the facility to create the tables of the database automatically. So there is no need to create tables in the SQLite database manually.
 
+Advantages:
+===========
+* SQLiteBuilder takes care of mapping Java classes to SQLite database.
+* Provides simple APIs for storing and retrieving Java objects directly to and from SQLite database
+* If there is change in the database or in any table, then you need to change the java Class properties only
+* Minimizes database access with smart fetching strategies.
+* Provides simple querying of data.
+* Automatic table creation: SQLiteBuilder Library provides the facility to create the tables of the database automatically. So there is no need to create tables in the SQLite database manually.
+
+## Setup
 The simplest way to use SQLiteBuilder is to add the library as aar dependency to your build.
+
 
 **Maven**
 
-<dependency>
-  <groupId>landepatil.vishal</groupId> 
-  <artifactId>sqlitebuilder</artifactId>
-  <version>1.0.2-beta</version>
-  <type>pom</type> 
-</dependency>
-
+    <dependency>
+      <groupId>landepatil.vishal</groupId>
+      <artifactId>sqlitebuilder</artifactId>
+      <version>1.0.2-beta</version>
+      <type>pom</type>
+    </dependency>
+	
+	
 **Gradle**
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        mavenCentral()
+    }
 
-dependencies {
-    implementation 'landepatil.vishal:sqlitebuilder:1.0.2-beta'
-}
+    dependencies {
+        compile 'landepatil.vishal:sqlitebuilder:1.0.2-beta'
+    }
+
 
 
 
