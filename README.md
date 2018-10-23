@@ -3,8 +3,8 @@ Introduction: SQLiteBuilder ORM (Object Relational Mapping) tool
 SQLiteBuilder library simplifies the development of Android application to interact with the database. SQLiteBuilder is an open source, lightweight, ORM (Object Relational Mapping) tool.
 An ORM tool simplifies the data creation, data manipulation and data access. It is a programming technique that maps the object to the data stored in the database.
 
-Advantages:
-===========
+## Advantages:
+
 * SQLiteBuilder takes care of mapping Java classes to SQLite database.
 * Provides simple APIs for storing and retrieving Java objects directly to and from SQLite database
 * If there is change in the database or in any table, then you need to change the java Class properties only
@@ -39,60 +39,83 @@ The simplest way to use SQLiteBuilder is to add the library as aar dependency to
 
 
 
-What is POJO in Java?
-POJO means "Plain Old Java Object" ,which contains only private variables and corresponding getter and setter (Optional) methods is called POJO CLASS. simply it is normal java class. it does not contains business implimentations. it is specified for "object creation" and call with object.
-Example :
-class  Student{
-public Student(int rollno, String name)
-{
-this. rollno= rollno;
-this. name = name;
-}
+## What is POJO in Java?
 
-int rollno;
-String name;
-void setRollno(int rollno)
-{
-this. Rollno= rollno;
-}
-void setName (int name)
-{
-this. name = name;
-}
-String getName()
-{
-return name;
-}
-String getRollno ()
-{
-return rollno;
-}
-}
+**POJO** means *__Plain Old Java Object__* ,which contains only private variables and corresponding getter and setter (Optional) methods is called POJO CLASS. simply it is normal java class. it does not contains business implimentations. it is specified for "object creation" and call with object.
 
-1.	Create Table :
-POJO object directly represented in database by using create Table menthod,To create table in android using SQLiteBuilder  Library, createTable(Class class) method  of  TableFactory class  is used as follows. 
-Syntax of method: 
+## Example :
+```
+class  Student
+{
+	public Student(int rollno, String name)
+	{
+		this. rollno= rollno;
+		this. name = name;
+	}
+	int rollno;
+	String name;
+	
+	void setRollno(int rollno)
+	{
+		this. Rollno= rollno;
+	}
+	void setName (int name)
+	{
+		this. name = name;
+	}
+	String getName()
+	{
+		return name;
+	}
+	String getRollno ()
+	{
+		return rollno;
+	}
+}
+```
+
+## 1. Create Table :
+POJO object directly represented in database by using create Table menthod,To create table in android using **SQLiteBuilder**  Library, *__createTable(Class class)__* method  of  *__TableFactory__* class  is used as follows. 
+
+**Syntax of method:**
+```
 public static String createTable(Class table, SQLiteDatabase database) 
-e.g
+```
+**Example**
+```
 TableFactory.createTable(ExapmleTable.class,db);
+```
+## 2. Drop Table :
+To drop table from android using **SQLiteBuilder** Library, *__dropTable(Class class)__* method  of  *__TableFactory__* class  is used as follows. 
 
-2.	Drop Table :
-To drop table from android using SQLiteBuilder Library, dropTable(Class class) method  of  TableFactory class  is used as follows. 
-Syntax of method: 
+**Syntax of method:**
+```
 public static String dropTable(Class table) 
-e.g
+```
+**Example**
+```
 db.execSQL(TableFactory.dropTable(ExapmleTable.class));
-3.	QUERY in SQLiteBuilder:
-This SQLite tutorial explains how to Generate SQLite Queries using SQLiteBuilder Library, to retrieve, insert, delete records 
-Query class of SQLiteBuilder Library is Used to create a different types of Queries,  to Create object of Query Class use createQuery() static method of  Query class is used 
- Syntax of method: 
-   public static Query createQuery(SQLiteOpenHelper db)
-e.g
+```
+
+## 3. QUERY in SQLiteBuilder:
+This SQLite tutorial explains how to Generate SQLite Queries using SQLiteBuilder Library, to **retrieve**,**insert**,**delete** records 
+**Query class of SQLiteBuilder Library is Used to create a different types of Queries**,  to Create object of Query Class use **createQuery()** static method of  Query class is used 
+
+**Syntax of method:**
+```
+public static Query createQuery(SQLiteOpenHelper db)
+```
+**Example**
+
+```
 Query  query=Query. createQuery(db);
+```
 By creating this object we are ready to load data Query object we need to only for Load data or select data
 
-1.	Selecting or Retrieving Data:
+**1. Selecting or Retrieving Data:**
+
 To select data from particular table we need object of Query class by using createQuery() method. There are three ways to load data from database. 
+	
 A] Single record(row) [ loadObject()]    B] Multiple records (rows) [load()]  C]  LoadCursor 
 This all three types of retrieving records helps developer to easily retrieve data from database as per format in which developer  need data.( ArrayList, Object, Cursor)
 
