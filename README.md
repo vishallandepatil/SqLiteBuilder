@@ -1,4 +1,5 @@
 Introduction:
+===================
 SQLiteBuilder library simplifies the development of Android application to interact with the database. SQLiteBuilder is an open source, lightweight, ORM (Object Relational Mapping) tool.
 An ORM tool simplifies the data creation, data manipulation and data access. It is a programming technique that maps the object to the data stored in the database.
 Advantages:
@@ -11,7 +12,7 @@ Advantages:
 
 The simplest way to use SQLiteBuilder is to add the library as aar dependency to your build.
 
-Maven
+**Maven**
 
 <dependency>
   <groupId>landepatil.vishal</groupId> 
@@ -20,7 +21,7 @@ Maven
   <type>pom</type> 
 </dependency>
 
-Gradle
+**Gradle**
 
 repositories {
     mavenCentral()
